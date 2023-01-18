@@ -1,3 +1,9 @@
 .panel {
-    color: white;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.panel__input {
+   
 }
