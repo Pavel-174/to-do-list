@@ -22,7 +22,7 @@
     margin: 0;
 }
 
-.todolist__task{
+.todolist__task {
     margin-right: 50px;
 }
 
@@ -31,6 +31,34 @@
     opacity: 0.4;
 }
 
+.todolist__button{
+    border-radius: 5px;
+ }
+
 .todolist__button:nth-child(2) {
   margin-left: 10px
+}
+
+.todolist__button_item{
+    margin-top: 23px;
+    width: 18px;
+    height: 18px;
+    background-image: url(../../img/edit.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.todolist__button:hover{
+   cursor: pointer;
+}
+
+.todolist__header-box {
+    display: flex;
+    flex-direction: row;
+}
+
+.todolist__button-img {
+    max-width: 15px;
+    max-height: 15px;
 }
