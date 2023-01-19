@@ -1,7 +1,7 @@
 import React from 'react';
 import ToDoListItem from '../ToDoListItem/ToDoListItem';
-import './ToDoList.css'
 import type { Task } from '../../App';
+import './ToDoList.css'
 
 interface ToDoListProps {
   tasks: Task[]

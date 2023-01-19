@@ -24,10 +24,14 @@ function App() {
     setTasks(tasks.filter(task => task.id !== id))
   };
 
+  function addTask ({name, description}: Omit<Task, 'id' | 'checked'>) {
+    setTasks([...tasks, {id: tasks[tasks.length-1].id + 1, name, description, checked: false}])
+  }
+
   return (
     <div className="App">
       <Header />
-      <Panel />
+      <Panel addTask={addTask} />
       <ToDoList tasks={tasks} deleteTask={deleteTask} />
     </div>
   );
