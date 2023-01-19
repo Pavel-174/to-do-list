@@ -1,15 +1,13 @@
 import React from 'react';
+import type { Task } from '../../App';
 
 interface ToDoListItemProps {
-    task: {
-        id: number;
-        name: string;
-        description: string;
-        checked: boolean;
-    }
+    task: Task
+    deleteTask: (id: Task['id']) => void
 }
 
-const ToDoListItem:  React.FC<ToDoListItemProps> = ({task}) => {
+const ToDoListItem:  React.FC<ToDoListItemProps> = ({task, deleteTask}) => {
+
   return (
     <li className="todolist__item" key={task.id}>
       <div className={`todolist__task ${task.checked ? `todolist__task_checked`: ""}`}>
@@ -18,7 +16,7 @@ const ToDoListItem:  React.FC<ToDoListItemProps> = ({task}) => {
       </div>
       <div>
         <button className="todolist__button">Complete</button>
-        <button className="todolist__button">Delete</button>
+        <button className="todolist__button" onClick={() => deleteTask(task.id)}>Delete</button>
       </div>
     </li>
   );

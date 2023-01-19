@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Panel.css'
 
 function Panel() {
+  
   const DEFAULT__TODO = {task: '', description: ''}
   const [todo, setTodo] = useState(DEFAULT__TODO);
 

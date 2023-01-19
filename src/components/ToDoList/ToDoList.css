@@ -1,8 +1,8 @@
 .todolist__text {
-    color: white;
+    color: black;
 }
 .todolist__header {
-    color: white;
+    color: black;
 }
 
 .todolist__item {
@@ -10,7 +10,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    background-color: darkgray;
+    background-color: white;
     margin-top: 10px;
     padding: 0 10px;
     border-radius: 10px;
