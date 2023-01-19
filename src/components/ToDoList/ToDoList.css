@@ -22,8 +22,13 @@
     margin: 0;
 }
 
+.todolist__task{
+    margin-right: 50px;
+}
+
 .todolist__task_checked {
     text-decoration: line-through 3px solid red;
+    opacity: 0.4;
 }
 
 .todolist__button:nth-child(2) {

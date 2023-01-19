@@ -28,11 +28,20 @@ function App() {
     setTasks([...tasks, {id: tasks[tasks.length-1].id + 1, name, description, checked: false}])
   }
 
+  function checkTask (id: Task['id']) {
+    setTasks(tasks.map((task) => {
+      if(task.id === id) {
+        return { ...task, checked: !task.checked };
+      }
+      return task;
+    }))
+  };
+
   return (
     <div className="App">
       <Header />
       <Panel addTask={addTask} />
-      <ToDoList tasks={tasks} deleteTask={deleteTask} />
+      <ToDoList tasks={tasks} deleteTask={deleteTask} checkTask={checkTask} />
     </div>
   );
 }
