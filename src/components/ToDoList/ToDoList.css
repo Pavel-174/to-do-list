@@ -3,6 +3,7 @@
 }
 .todolist__header {
     color: black;
+    margin: 8px 0 0 0;
 }
 
 .todolist__item {
@@ -15,6 +16,7 @@
     padding: 0 10px;
     border-radius: 10px;
     text-align: left;
+    width: 60vw;
 }
 
 .todolist__list {
@@ -24,6 +26,7 @@
 
 .todolist__task {
     margin-right: 50px;
+    max-width: 40vw;
 }
 
 .todolist__task_checked {
@@ -40,13 +43,13 @@
 }
 
 .todolist__button_item{
-    margin-top: 23px;
-    width: 18px;
-    height: 18px;
+    width: 25px;
+    height: 25px;
     background-image: url(../../img/edit.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    margin-top: 10px;
 }
 
 .todolist__button:hover{
@@ -56,6 +59,10 @@
 .todolist__header-box {
     display: flex;
     flex-direction: row;
+}
+
+.todolist__header {
+    max-width: 40vw;;
 }
 
 .todolist__button-img {

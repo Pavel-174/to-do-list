@@ -18,7 +18,7 @@ function App() {
   const [tasks, setTasks] = React.useState([
     {id: 1, name: 'test1', description: 'dfngnlkasdm;l', checked: false},
     {id: 2, name: 'test2', description: 'dfngnlkasdm;l', checked: false},
-    {id: 3, name: 'testvnslkdzNACSKJLBlhjcHl:m%$^&*(', description: 'dfngnlkasdm;l', checked: true}
+    {id: 3, name: 'Test3', description: 'dfngnlkasdm;l', checked: true}
   ]);
 
   function editTask (id: Task['id']) {
@@ -30,7 +30,7 @@ function App() {
   };
 
   function addTask ({name, description}: Omit<Task, 'id' | 'checked'>) {
-    setTasks([...tasks, {id: tasks[tasks.length-1].id + 1, name, description, checked: false}])
+    setTasks([...tasks, {id: tasks.length + 1, name, description, checked: false}])
   }
 
   function checkTask (id: Task['id']) {

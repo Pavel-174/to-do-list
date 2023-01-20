@@ -2,8 +2,13 @@
     display: flex;
     flex-direction: row;
     gap: 10px;
+    width: 60vw;
 }
 
 .panel__input {
-   
+   width: 25vw;
+}
+
+.panel__button {
+    width: 15vw;
 }
