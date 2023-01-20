@@ -5,7 +5,7 @@ import './Panel.css'
 const DEFAULT__TODO = {name: '', description: ''}
 
 interface PanelProps {
-  addTask: ({ name, description }: Omit<Task, 'id' | 'checked'>) => void
+  addTask: ({ name, description }: Omit<Task, 'id' | 'checked'>) => void;
 }
 
 const Panel: React.FC<PanelProps> = ({addTask}) => {

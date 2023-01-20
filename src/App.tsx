@@ -42,11 +42,23 @@ function App() {
     }))
   };
 
+  const changeTask = ({ name, description }: Omit<Task, 'id' | 'checked'>) => {
+    setTasks(
+      tasks.map((task) => {
+        if (task.id === edit) {
+          return { ...task, name, description };
+        }
+        return task;
+      })
+    );
+    setEdit(null);
+  };
+
   return (
     <div className="App">
       <Header />
       <Panel addTask={addTask} />
-      <ToDoList tasks={tasks} deleteTask={deleteTask} checkTask={checkTask}  editTask={editTask} />
+      <ToDoList tasks={tasks} deleteTask={deleteTask} checkTask={checkTask}  editTask={editTask} changeTask={changeTask}  edit={edit}/>
     </div>
   );
 }

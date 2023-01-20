@@ -2,10 +2,10 @@ import React from 'react';
 import type { Task } from '../../App';
 
 interface ToDoListItemProps {
-    task: Task
-    deleteTask: (id: Task['id']) => void
-    checkTask: (id: Task['id']) => void
-    editTask: (id: Task['id']) => void
+    task: Task;
+    deleteTask: (id: Task['id']) => void;
+    checkTask: (id: Task['id']) => void;
+    editTask: (id: Task['id']) => void;
 }
 
 const ToDoListItem:  React.FC<ToDoListItemProps> = ({task, deleteTask, checkTask, editTask}) => {
