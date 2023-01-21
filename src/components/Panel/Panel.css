@@ -3,6 +3,7 @@
     flex-direction: row;
     gap: 10px;
     width: 60vw;
+    justify-content: center;
 }
 
 .panel__input {

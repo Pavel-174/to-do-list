@@ -23,9 +23,11 @@ const EditToDoListItem: React.FC<EditToDoListItemProps> = ({task, changeTask}) =
 
   return (
     <li className="todolist__item" key={task.id}>
-      <input placeholder="Task" className='panel__input' value={todo.name} name="name" onChange={onChangeTask}></input>
-      <input placeholder="Description" className='panel__input' value={todo.description} name="description" onChange={onChangeTask}></input>
-      <button className='panel__button' onClick={onClick}>ADD</button>
+      <div className='todolist__input-box'>
+        <input placeholder="Task" className='todolist__input' value={todo.name} name="name" onChange={onChangeTask}></input>
+        <input placeholder="Description" className='todolist__input' value={todo.description} name="description" onChange={onChangeTask}></input>
+      </div>
+      <button className='todolist__button' onClick={onClick}>Save</button>
     </li>
   );
 }
