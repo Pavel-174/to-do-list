@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import type { Task } from '../../App';
-import "../ToDoList/ToDoList.css"
-import "../ToDoList/ToDoList.css"
+import type { Task } from '../../App/App';
+import "../ToDoList.css"
 
 interface EditToDoListItemProps {
   task: Task;

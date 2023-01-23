@@ -1,5 +1,5 @@
 .todolist {
-margin-top: 30px;
+margin: 30px 0;
 }
 
 .todolist__text {
@@ -53,16 +53,6 @@ margin-top: 30px;
   /* margin-left: 10px */
 }
 
-.todolist__button_item{
-    width: 25px;
-    height: 25px;
-    background-image: url(../../img/edit.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    margin: 10px 0 0 10px;
-}
-
 .todolist__button:hover{
    cursor: pointer;
 }
@@ -77,14 +67,13 @@ margin-top: 30px;
     max-width: 40vw;;
 }
 
-.todolist__button-img {
-    max-width: 15px;
-    max-height: 15px;
-}
-
 .todolist__input-box {
     display: flex;
     flex-direction: column;
     max-width: 45vw;
     gap: 8px;
+}
+
+.todolist__button_item {
+    margin: 8px 0 0 5px;
 }

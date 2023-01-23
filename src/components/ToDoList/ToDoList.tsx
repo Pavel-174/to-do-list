@@ -1,7 +1,7 @@
 import React from 'react';
-import ToDoListItem from '../ToDoListItem/ToDoListItem';
-import EditToDoListItem from '../EditToDoLisItem/EditToDoIstItem'
-import type { Task } from '../../App';
+import ToDoListItem from './ToDoListItem/ToDoListItem';
+import EditToDoListItem from './EditToDoLisItem/EditToDoIstItem'
+import type { Task } from '../App/App';
 import './ToDoList.css'
 
 interface ToDoListProps {

@@ -1,7 +1,8 @@
 import React from 'react';
-import Header from './components/Header/Header';
-import Panel from './components/Panel/Panel';
-import ToDoList from './components/ToDoList/ToDoList';
+import Header from '../Header/Header';
+import Panel from '../Panel/Panel';
+import ToDoList from '../ToDoList/ToDoList';
+import Footer from '../Footer/Footer';
 import './App.css';
 
 export type Task = {
@@ -57,8 +58,11 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Panel addTask={addTask} />
-      <ToDoList tasks={tasks} deleteTask={deleteTask} checkTask={checkTask}  editTask={editTask} changeTask={changeTask}  edit={edit}/>
+      <main className='main'>
+        <Panel addTask={addTask} />
+        <ToDoList tasks={tasks} deleteTask={deleteTask} checkTask={checkTask}  editTask={editTask} changeTask={changeTask}  edit={edit}/>
+      </main>
+      <Footer />
     </div>
   );
 }

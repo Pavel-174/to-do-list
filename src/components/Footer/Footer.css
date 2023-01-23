@@ -1,0 +1,9 @@
+.footer__span {
+    color: white;
+}
+
+.footer {
+    display: flex;
+    flex-shrink: 0;
+    margin: 0 0 10px 0;
+}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import type { Task } from '../../App';
+import type { Task } from '../App/App';
 import './Panel.css'
 
 const DEFAULT__TODO = {name: '', description: ''}

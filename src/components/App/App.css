@@ -2,8 +2,14 @@
   display: flex;
   text-align: center;
   align-items: center;
-  height: 100vh;
   background-color: black;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
+  width:  100%;
+  min-height: 100vh;
+}
+
+.main {
+  flex-shrink: 0; 
+  flex-grow: 1;
 }

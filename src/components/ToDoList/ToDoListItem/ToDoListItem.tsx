@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Task } from '../../App';
+import type { Task } from '../../App/App';
 
 interface ToDoListItemProps {
     task: Task;
@@ -15,7 +15,7 @@ const ToDoListItem:  React.FC<ToDoListItemProps> = ({task, deleteTask, checkTask
       <div className={`todolist__task ${task.checked ? `todolist__task_checked`: ""}`}>
         <div className='todolist__header-box'>
           <h3 className="todolist__header">{task.name}</h3>
-          <button className='todolist__button todolist__button_item' onClick={() => editTask(task.id)} disabled={task.checked ? true : false}></button>
+          <button className='todolist__button todolist__button_item' onClick={() => editTask(task.id)} disabled={task.checked ? true : false}>Edit</button>
         </div>
         <p  className="todolist__text">{task.description}</p>
       </div>
