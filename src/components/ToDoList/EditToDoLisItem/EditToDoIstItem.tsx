@@ -10,7 +10,12 @@ interface EditToDoListItemProps {
 const EditToDoListItem: React.FC<EditToDoListItemProps> = ({task, changeTask}) => {
 
   const [todo, setTodo] = useState({name: task.name, description: task.description});
-
+  const [isTaskInputValid, setTaskInputValid] = React.useState(true);
+  const [isDescriptionInputValid, setDescriptionInputValid] = React.useState(true);
+  const [buttonSubmitState, setButtonSubmitState] = React.useState(false);
+  const [taskValidationMessage, setTaskValidationMessage] = React.useState('');
+  const [descriptionValidationMessage, setDescriptionValidationMessage] = React.useState('');
+  
   function onClick () {
     changeTask(todo);
   };
@@ -18,15 +23,71 @@ const EditToDoListItem: React.FC<EditToDoListItemProps> = ({task, changeTask}) =
   function onChangeTask (e: React.ChangeEvent<HTMLInputElement>) {
     const { value, name } = e.target;
     setTodo({...todo, [name]: value});
+    checkTaskValidation(e.target);
   };
+
+  function onChangeDescription (e: React.ChangeEvent<HTMLInputElement>) {
+    const { value, name } = e.target;
+    setTodo({...todo, [name]: value});
+    checkDescriptionValidation(e.target);
+  };
+
+   //Валидация формы
+   React.useEffect(()=> {
+    if (isTaskInputValid && isDescriptionInputValid) {
+      setButtonSubmitState(true);
+    } else {
+      setButtonSubmitState(false);
+    }
+  }, [isTaskInputValid, isDescriptionInputValid]);
+
+  function checkTaskValidation(inputElement: any) {
+    if (!inputElement.validity.valid) {
+      setTaskInputValid(false);
+      setTaskValidationMessage(inputElement.validationMessage);
+    } else {
+      setTaskInputValid(true);
+    }
+  }
+
+  function checkDescriptionValidation(inputElement: any) {
+    if (!inputElement.validity.valid) {
+      setDescriptionInputValid(false);
+      setDescriptionValidationMessage(inputElement.validationMessage);
+    } else {
+      setDescriptionInputValid(true);
+    }
+  }
 
   return (
     <li className="todolist__item" key={task.id}>
-      <div className='todolist__input-box'>
-        <input placeholder="Task" className='todolist__input' value={todo.name} name="name" onChange={onChangeTask}></input>
-        <input placeholder="Description" className='todolist__input' value={todo.description} name="description" onChange={onChangeTask}></input>
-      </div>
-      <button className='todolist__button' onClick={onClick}>Save</button>
+      <form className='todolist__input-box'>
+        <input 
+          placeholder="Task" 
+          className={`todolist__input ${!isTaskInputValid ? 'todolist__input_type_error' : 'todolist__input_type_ok'}`}
+          value={todo.name} 
+          name="name" 
+          onChange={onChangeTask} 
+          required 
+          minLength={2} 
+          maxLength={30}
+        >
+        </input>
+        <span className={`todolist__text-error ${!isTaskInputValid ? 'todolist__text-error_active' : 'todolist__text-error_inactive'}`}>{taskValidationMessage}</span>
+        <input 
+          placeholder="Description" 
+          className={`todolist__input ${!isDescriptionInputValid ? 'todolist__input_type_error' : 'todolist__input_type_ok'}`}
+          value={todo.description} 
+          name="description" 
+          onChange={onChangeDescription} 
+          required 
+          minLength={2} 
+          maxLength={150}
+        >
+        </input>
+        <span className={`todolist__text-error ${!isDescriptionInputValid ? 'todolist__text-error_active' : 'todolist__text-error_inactive'}`}>{descriptionValidationMessage}</span>
+      </form>
+      <button className='todolist__button' onClick={onClick} disabled={! buttonSubmitState ? true : false}>Save</button>
     </li>
   );
 }

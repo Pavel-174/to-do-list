@@ -4,6 +4,8 @@ margin: 30px 0;
 
 .todolist__text {
     color: black;
+    max-width: 45vw;
+    text-align: center;
 }
 .todolist__header {
     color: black;
@@ -17,11 +19,11 @@ margin: 30px 0;
     justify-content: space-between;
     background-color: white;
     margin-top: 10px;
-    padding: 0 10px;
+    padding: 10px 10px;
     border-radius: 10px;
     text-align: left;
     width: 60vw;
-    min-height: 90px;
+    min-height: 150px;
 }
 
 .todolist__list {
@@ -84,3 +86,33 @@ margin: 30px 0;
 .todolist__button_item {
     margin: 8px 0 0 5px;
 }
+
+.todolist__input_type_ok {
+    border-bottom-color: rgba(0, 0, 0, 0.2);
+}
+
+.todolist__input_type_error {
+    border-color: rgba(255, 0, 0, 1);
+} 
+
+.todolist__text-error_active{
+    display: block;
+}
+
+.todolist__text-error_inactive{
+    visibility: hidden;
+}
+
+.todolist__text-error{
+    color: rgba(255, 0, 0, 1);
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-top: 5px;
+    max-width: 358px;
+    min-height: 30px;
+}
+
