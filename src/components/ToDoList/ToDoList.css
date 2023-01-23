@@ -35,8 +35,15 @@ margin: 30px 0;
 }
 
 .todolist__task_checked {
-    text-decoration: line-through 3px solid red;
     opacity: 0.4;
+}
+
+.todolist__header_checked {
+    text-decoration: line-through 3px solid red;
+}
+
+.todolist__text_checked {
+    text-decoration: line-through 3px solid red;
 }
 
 .todolist__button{
