@@ -61,33 +61,39 @@ const EditToDoListItem: React.FC<EditToDoListItemProps> = ({task, changeTask}) =
 
   return (
     <li className="todolist__item" key={task.id}>
-      <form className='todolist__input-box'>
-        <input 
-          placeholder="Task" 
-          className={`todolist__input ${!isTaskInputValid ? 'todolist__input_type_error' : 'todolist__input_type_ok'}`}
-          value={todo.name} 
-          name="name" 
-          onChange={onChangeTask} 
-          required 
-          minLength={2} 
-          maxLength={30}
-        >
-        </input>
-        <span className={`todolist__text-error ${!isTaskInputValid ? 'todolist__text-error_active' : 'todolist__text-error_inactive'}`}>{taskValidationMessage}</span>
-        <input 
-          placeholder="Description" 
-          className={`todolist__input ${!isDescriptionInputValid ? 'todolist__input_type_error' : 'todolist__input_type_ok'}`}
-          value={todo.description} 
-          name="description" 
-          onChange={onChangeDescription} 
-          required 
-          minLength={2} 
-          maxLength={150}
-        >
-        </input>
-        <span className={`todolist__text-error ${!isDescriptionInputValid ? 'todolist__text-error_active' : 'todolist__text-error_inactive'}`}>{descriptionValidationMessage}</span>
+      <form className='todolist__form'>
+        <div className='todolist__input-box'>
+          <input 
+            placeholder="Task" 
+            className={`todolist__input ${!isTaskInputValid ? 'todolist__input_type_error' : 'todolist__input_type_ok'}`}
+            value={todo.name} 
+            name="name" 
+            onChange={onChangeTask} 
+            required 
+            minLength={2} 
+            maxLength={30}
+          >
+          </input>
+          <span className={`todolist__text-error ${!isTaskInputValid ? 'todolist__text-error_active' : 'todolist__text-error_inactive'}`}>{taskValidationMessage}</span>
+        </div>
+        <div className='todolist__input-box'>
+          <input 
+            placeholder="Description" 
+            className={`todolist__input ${!isDescriptionInputValid ? 'todolist__input_type_error' : 'todolist__input_type_ok'}`}
+            value={todo.description} 
+            name="description" 
+            onChange={onChangeDescription} 
+            required 
+            minLength={2} 
+            maxLength={150}
+          >
+          </input>
+          <span className={`todolist__text-error ${!isDescriptionInputValid ? 'todolist__text-error_active' : 'todolist__text-error_inactive'}`}>{descriptionValidationMessage}</span>
+        </div>
       </form>
-      <button className='todolist__button' onClick={onClick} disabled={! buttonSubmitState ? true : false}>Save</button>
+      <div className='todolist__button-box'>
+        <button className='todolist__button' onClick={onClick} disabled={! buttonSubmitState ? true : false}>Save</button>
+      </div>
     </li>
   );
 }

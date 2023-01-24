@@ -15,7 +15,6 @@ margin: 30px 0;
 .todolist__item {
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: space-between;
     background-color: white;
     margin-top: 10px;
@@ -23,7 +22,7 @@ margin: 30px 0;
     border-radius: 10px;
     text-align: left;
     width: 60vw;
-    min-height: 150px;
+    min-height: 110px;
 }
 
 .todolist__list {
@@ -33,7 +32,7 @@ margin: 30px 0;
 
 .todolist__task {
     margin-right: 50px;
-    max-width: 40vw;
+    max-width: 45vw;
 }
 
 .todolist__task_checked {
@@ -50,41 +49,37 @@ margin: 30px 0;
 
 .todolist__button{
     border-radius: 5px;
+    width: 8vw;
+    height: 22px;
+    background-color: black;
+    color: white;
  }
 
 .todolist__button-box {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-}
-
-.todolist__button:nth-child(2) {
-  /* margin-left: 10px */
+    align-items: center;
+    justify-content: space-around;
+    width: 8vw;
 }
 
 .todolist__button:hover{
    cursor: pointer;
 }
 
-.todolist__header-box {
-    display: flex;
-    flex-direction: row;
-    max-width: 45vw;
-}
-
 .todolist__header {
     max-width: 40vw;;
 }
 
-.todolist__input-box {
+.todolist__form {
     display: flex;
     flex-direction: column;
     max-width: 45vw;
-    gap: 8px;
+    justify-content: space-around;
 }
 
-.todolist__button_item {
-    margin: 8px 0 0 5px;
+.todolist__input {
+    margin-right: 10px;
 }
 
 .todolist__input_type_ok {
@@ -114,5 +109,10 @@ margin: 30px 0;
     margin-top: 5px;
     max-width: 358px;
     min-height: 30px;
+}
+
+.todolist__input-box {
+    display: flex;
+    flex-direction: row;
 }
 

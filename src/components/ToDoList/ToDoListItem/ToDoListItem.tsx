@@ -13,13 +13,11 @@ const ToDoListItem:  React.FC<ToDoListItemProps> = ({task, deleteTask, checkTask
   return (
     <li className="todolist__item" key={task.id}>
       <div className={`todolist__task ${task.checked ? `todolist__task_checked`: ""}`}>
-        <div className='todolist__header-box'>
-          <h3 className={`todolist__header ${task.checked ? `todolist__header_checked`: ""}`}>{task.name}</h3>
-          <button className='todolist__button todolist__button_item' onClick={() => editTask(task.id)} disabled={task.checked ? true : false}>Edit</button>
-        </div>
+        <h3 className={`todolist__header ${task.checked ? `todolist__header_checked`: ""}`}>{task.name}</h3>
         <p  className={`todolist__text ${task.checked ? `todolist__text_checked`: ""}`}>{task.description}</p>
       </div>
-      <div className='todolist__button-box'> 
+      <div className='todolist__button-box'>
+        <button className='todolist__button' onClick={() => editTask(task.id)} disabled={task.checked ? true : false}>Edit</button>
         <button className="todolist__button" onClick={() => checkTask(task.id)}>Complete</button>
         <button className="todolist__button" onClick={() => deleteTask(task.id)}>Delete</button>
       </div>
