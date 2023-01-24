@@ -25,15 +25,6 @@
    margin-left: 20px;
 }
 
-
-.panel__input_type_ok {
-    border-bottom-color: rgba(0, 0, 0, 0.2);
-}
-
-.panel__input_type_error {
-    border-color: rgba(255, 0, 0, 1);
-} 
-
 .panel__text-error_active{
     display: block;
     width: 20vw;

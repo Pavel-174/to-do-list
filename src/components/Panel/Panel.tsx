@@ -11,8 +11,8 @@ interface PanelProps {
 const Panel: React.FC<PanelProps> = ({addTask}) => {
 
   const [todo, setTodo] = useState(DEFAULT__TODO);
-  const [isTaskInputValid, setTaskInputValid] = React.useState(true);
-  const [isDescriptionInputValid, setDescriptionInputValid] = React.useState(true);
+  const [isTaskInputValid, setTaskInputValid] = React.useState(false);
+  const [isDescriptionInputValid, setDescriptionInputValid] = React.useState(false);
   const [buttonSubmitState, setButtonSubmitState] = React.useState(false);
   const [taskValidationMessage, setTaskValidationMessage] = React.useState('');
   const [descriptionValidationMessage, setDescriptionValidationMessage] = React.useState('');
@@ -67,8 +67,8 @@ const Panel: React.FC<PanelProps> = ({addTask}) => {
         <div className='panel_input-box'>
           <input 
             placeholder="Task" 
-            className={`panel__input ${!isTaskInputValid ? 'panel__input_type_error' : 'panel__input_type_ok'}`}
-            value={todo.name} 
+            className='panel__input'
+            value={todo.name}
             name="name" 
             onChange={onChangeTask} 
             required 
@@ -81,7 +81,7 @@ const Panel: React.FC<PanelProps> = ({addTask}) => {
         <div className='panel_input-box'>
           <input 
             placeholder="Description" 
-            className={`panel__input ${!isDescriptionInputValid ? 'panel__input_type_error' : 'panel__input_type_ok'}`}
+            className='panel__input'
             value={todo.description} 
             name="description" 
             onChange={onChangeDescription} 
@@ -93,7 +93,7 @@ const Panel: React.FC<PanelProps> = ({addTask}) => {
           <span className={`panel__text-error ${!isDescriptionInputValid ? 'panel__text-error_active' : 'panel__text-error_inactive'}`}>{descriptionValidationMessage}</span>
         </div>
       </form>
-      <button className='panel__button' onClick={onClick} disabled={! buttonSubmitState ? true : false}>ADD</button>
+      <button className='panel__button' onClick={onClick} disabled={!buttonSubmitState ? true : false}>ADD</button>
     </div>
   );
 }
