@@ -93,7 +93,7 @@ const Panel: React.FC<PanelProps> = ({addTask}) => {
           <span className={`panel__text-error ${!isDescriptionInputValid ? 'panel__text-error_active' : 'panel__text-error_inactive'}`}>{descriptionValidationMessage}</span>
         </div>
       </form>
-      <button className='panel__button' onClick={onClick} disabled={!buttonSubmitState ? true : false}>ADD</button>
+      <button className={`panel__button ${!buttonSubmitState ? `panel__button_disabled`: `panel__button_enabled`}`} onClick={onClick} disabled={!buttonSubmitState ? true : false}>ADD</button>
     </div>
   );
 }
