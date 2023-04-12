@@ -6,10 +6,10 @@ import Footer from '../Footer/Footer';
 import './App.css';
 
 export type Task = {
-      id: number | null;
-      name: any;
-      description: any;
-      checked: boolean | null;
+      id: number;
+      name: string;
+      description: string;
+      checked: boolean;
 }
 
 function App() {
@@ -25,7 +25,9 @@ function App() {
   const [tasks, setTasks] = React.useState(() => {
     const saved: any = localStorage.getItem("tasks");
     const initialValue = JSON.parse(saved);
-    return initialValue || "";
+    return initialValue || [
+        // {id: 1, name: 'Example', description: 'It is example to-do card. Delete it before usage.', checked: false},
+      ];
   });
 
   React.useEffect(() => {
@@ -37,7 +39,7 @@ function App() {
   };
 
   function deleteTask (id: Task['id']) {
-    setTasks(tasks.filter((task: { id: number | null; }) => task.id !== id))
+    setTasks(tasks.filter((task: { id: number; }) => task.id !== id))
   };
 
   function addTask ({name, description}: Omit<Task, 'id' | 'checked'>) {
@@ -45,7 +47,7 @@ function App() {
   }
 
   function checkTask (id: Task['id']) {
-    setTasks(tasks.map((task: { id: number | null; checked: any; }) => {
+    setTasks(tasks.map((task: { id: number; checked: any; }) => {
       if(task.id === id) {
         return { ...task, checked: !task.checked };
       }
