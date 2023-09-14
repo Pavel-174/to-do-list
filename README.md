@@ -1,7 +1,15 @@
-# To-do list Localstorage на React+TypeScript
+# To-do list Localstorage (React+TypeScript)
 
-## Первый проект с использованием TypeScript.
+## Getting Started
 
-Проект создавался с целью знакомства с TypeScript.
+First, run the development server:
 
-Изначально в планах было написать бэкэнд для проекта для хранения данных. Позже было принято решение хранить данные в localstorage и написать новый проект To-Do List с бэеэндом.
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `src/index.tsx`. The page auto-updates as you edit the file.
